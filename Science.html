@@ -1,6 +1,462 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
-<styles>
- body{
+<style>
+	body {
+	  margin: 0;
+	  padding: 0;
+	  background: #DDD;
+	  font-size: 16px;
+	  color: white;
+	  font-family: 'Roboto', sans-serif;
+	  font-weight: 300;
+	  background-image: url("C_REGSHO_0XXXX0141_REC_AFRICA_VIDSCREENSHOT.jpg");
+	  background-attachment: fixed; 
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	}
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+  
+      .header .home {
+        font-size: 25px;
+        color: white;
+		text-decoration: none;
+      }
+	  .tablinks{
+        font-size: 25px;
+        color: white;
+		text-decoration: none;
+      }
+  
+      .nav-items {
+		cursor: pointer;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 20px;
+      }
+  
+      .nav-items a {
+        text-decoration: none;
+        color: white;
+        padding: 35px 20px;
+      }
+	  
+	  .extra a {
+        text-decoration: none;
+        color: white;
+        padding: 35px 20px;
+      }
+	  
+	  .nav-items a.eng:hover {
+        text-decoration: none;
+        color: green;
+        padding: 35px 20px;
+      }
+	  
+	  .nav-items a.science:hover {
+        text-decoration: none;
+        color: red;
+        padding: 35px 20px;
+      }
+	  
+	  .nav-items a.tech:hover {
+        text-decoration: none;
+        color: orange;
+        padding: 35px 20px;
+      }
+	  
+	  .nav-items a.maths:hover {
+        text-decoration: none;
+        color: blue;
+        padding: 35px 20px;
+      }
+	  
+	  
+	  
+	  
+	  @import url(https://fonts.googleapis.com/css?family=Khula:700);
+
+.hidden {
+  opacity:0;
+}
+.console-container {
  
- }
+  font-family:Khula;
+  font-size:4em;
+  text-align:center;
+  height:200px;
+  width:600px;
+  display:block;
+  position:absolute;
+  color:white;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.console-underscore {
+   display:inline-block;
+  position:relative;
+  top:-0.14em;
+  left:10px;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+  display: block;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  background-color: black;
+}
+.dropdown-content a:hover {
+  color: #FFFFFF;
+  background-color: orange;
+}
+
+$dark: #4D394B;
+$darker: #2E222D;
+$darkest: darken($darker, 5);
+
+$primary: #4C9689;
+$invalid: #e74c3c;
+$valid: $primary;
+
+.sudoku-container {
+	border: $border solid $darkest;
+	margin: 0 auto;
+	position: relative;
+	padding: 0 2px;
+	
+	&::before, &::after {
+		position: absolute;
+		border-style: solid;
+		pointer-events: none;
+		content: "";
+	}
+	&::before {
+		width: 156px;
+		border-width: 0 4px;
+		border-color: transparent $darkest transparent $darkest;
+		top: $border;
+		left: 160px;
+		bottom: $border;
+	}	
+	&::after {
+		height: 156px;
+		border-width: 4px 0;
+		border-color: $darkest transparent $darkest transparent;
+		left: $border;
+		top: 160px;
+		right: $border;
+	}	
+}
+
+tr:nth-child(1) td:nth-child(3) input,
+tr:nth-child(1) td:nth-child(6) input {
+    margin: 0 10px 0 0;
+}
+
+tr:nth-child(3) input,
+tr:nth-child(6) input {
+    margin: 0 0 10px 0;
+}
+
+
+.sudoku-container input {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	font-size: 20px;
+	padding: 0;
+	border: 3px $darker solid;
+	background-color: black;
+	color: #eee;
+	
+	&:focus {
+		border-color: $primary;
+	}
+	
+		&.highlight {
+			background-color: #29B6F6;
+			border-color: #29B6F6;	
+		}
+	
+	&.disabled {
+		cursor: not-allowed;
+		background-color: $primary;
+		border-color: $primary;
+		
+		&.highlight {
+			background-color: #29B6F6;
+			border-color: #29B6F6;	
+		}
+	}
+}
+
+.sudoku-container .invalid {
+	border-color: red;
+	
+	&:focus {
+		border-color: red;
+	}	
+}
+
+.sudoku-container.valid-matrix {
+	border-color: green;
+}
+
+#controls {
+	margin: 20px 0;
+}
+
+.btn.primary {
+	background-color: $primary;
+	box-shadow: inset 0 -3px darken($primary, 10);
+}
+
+ol {
+  display: table;
+  margin: 0 auto;
+}
+
+
+</style>
+<body onload="openTab(event, 'home')">
+	<header class="header">
+        <a href="home.html" class="home" color="white" >HOME</a>
+        <nav class="nav-items">
+             <a class="science" href="home.html">SCIENCE</a>
+             <a class="tech" href="home.html">TECHNOLOGY</a>
+             <a class="eng" href="home.html">ENGINEERING</a>
+             <a class="maths" href="mathematics.html"><u>MATHEMATICS</u></a>
+             <a href="login.html">Logout</a>
+        </nav>
+    </header>
+	<center>
+	
+	<div class="dropdown">
+	  <button>PICK YOUR GRADE</button>
+	  <div class="dropdown-content">
+	  <a onclick="openTab(event, 'grd9')">GRADE 09</a>
+	  <a onclick="openTab(event, 'grd8')">GRADE 08</a>
+	  <a onclick="openTab(event, 'grd7')">GRADE 07</a>
+	  </div>
+	</div>
+	
+	<div class="tabcontent" id="home">
+		<br><br>WELCOME GRADE 09<br><br>
+	</div>
+	
+	<div class="tabcontent" id="grd8">
+		<br><br>WELCOME GRADE 08<br><br>
+	</div>
+	
+	<div class="tabcontent" id="grd7">
+		<br><br>WELCOME GRADE 07<br><br>
+	</div>
+	
+	<div class="nav-items" >
+		<a class="tablinks" onclick="openTab(event, 'Course')" >TUTORIALS AND QUIZ</a>
+		<a class="tablinks" onclick="openTab(event, 'Games')">GAMES</a>
+	</div>
+	<br><br>
+	<div id="Course" class="tabcontent">
+	<ol>
+		<li>Grade 7 The Solar System</li><br>
+		<iframe width="400" height="232" src="https://www.youtube.com/embed/w36yxLgwUOc"
+		title="YouTube video player" frameborder="0" 
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+		allowfullscreen>
+		</iframe><br><br><br>
+		
+		
+		<li>Grade 7 The Human Body</li><br>
+		<iframe width="400" height="232" src="https://www.youtube.com/embed/9j1PWhOnlmk" 
+		title="Grade 9 Algebraic Expressions" frameborder="0" 
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+		allowfullscreen>
+		
+		</iframe>
+	
+	<li>Grade 7 The Animal Kingdom/li><br>
+		<iframe width="400" height="232" src="https://www.youtube.com/embed/mRidGna-V4E" 
+		title="Grade 9 Algebraic Expressions" frameborder="0" 
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+		allowfullscreen>
+		
+		</iframe>
+	</ol>
+		<br><br><br><br><br><br><br>
+	 QUIZ<br>
+	 
+	 
+		<form id="game">
+			<p>Question: <span id="questionnumber"></p>
+			<p>What is <span id="first"></span> <span id="operator"></span> <span id="second"></span>?</p>
+			<p><input name="answer" autocomplete="off"></label> <input type="submit" name="submit" value="answer"></p>
+			
+		</form>
+		<p id="demo"></p>
+		
+		<br><br><br><br><br>
+	 
+	 <div class="extra">
+		ADDITIONAL RESOURCES:<br><br><br>
+		MATHPAPA WEBSITE <a href="https://www.mathpapa.com/factoring-calculator/?q=x%5E2%2B5x%2B4" color="white">Click me</a>
+	 </div>
+	</div>
+	<br><br>
+	
+	<div id="Games" class="tabcontent">
+		<div class="container"></div>
+		<div id="controls">
+		<button type="button" class="btn primary" data-action="newGame">New Game</button>
+		<button type="button" class="btn primary" data-action="solve">Solve</button>
+		<button type="button" class="btn primary" data-action="validate">Validate</button>
+		<br>
+	</div>
+	</center>
+	<script src="soduko.js"></script>
+	
+	<script>
+	function openTab(evt, tabName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+		
+		
+		window.questions = {
+    history: [],
+    init: function (form) {
+        this.minValue = 1;
+        this.maxValue = 20;
+        this.totalQuestions = 10;
+        this.startTime = new Date();
+        form.questions = this;
+        form.onsubmit = this.ask;
+        form.questions.show(form);
+    },
+    get: function () {
+        var question = {},
+            operatorType = Math.floor(Math.random() * 4);
+        do {
+            question.first = Math.floor(Math.random() * 12) + 1;
+            question.second = Math.floor(Math.random() * 12) + 1;
+            switch (operatorType) {
+            case 0:
+                question.operator = 'plus';
+                question.answer = question.first + question.second;
+                break;
+            case 1:
+                question.operator = 'minus';
+                question.answer = question.first - question.second;
+                break;
+            case 2:
+                question.operator = 'times';
+                question.answer = question.first * question.second;
+                break;
+            case 3:
+                question.operator = 'divided by';
+                question.answer = (question.first / question.second * 100) / 100;
+                break;
+            default:
+                question.operator = '';
+                question.answer = '';
+            }
+        } while (!this.valid(question));
+        return question;
+    },
+    valid: function (question) {
+        var isValid = (question.answer === Math.floor(question.answer)
+            && question.answer >= this.minValue
+            && question.answer <= this.maxValue);
+        if (isValid && question.operator === 'divided by') {
+            isValid === (question.first > 1 && question.second > 1);
+        }
+        return isValid;
+    },
+    ask: function (evt) {
+        var form = this,
+            that = form.questions;
+        if (!form.elements.answer.value) {
+            return false;
+        }
+        that.answer(form);
+        if (that.history.length < that.totalQuestions) {
+            that.show(form);
+        } else {
+            that.endTime = new Date();
+            that.summary();
+        }
+        return false;
+    },
+    show: function (form) {
+        var question = this.get();
+        this.history.push(question);
+        document.getElementById('questionnumber').innerHTML = this.history.length + ' / ' + this.totalQuestions;
+        document.getElementById('first').innerHTML = question.first;
+        document.getElementById('operator').innerHTML = question.operator;
+        document.getElementById('second').innerHTML = question.second;
+        form.elements.answer.value = '';
+        form.elements.answer.focus();
+    },
+    answer: function (form) {
+        var question = this.history[this.history.length - 1],
+            answer = question.answer;
+        question.guess = form.elements.answer.value;
+        question.result = true;
+        if (Number(question.guess) !== answer) {
+            question.result = false;
+            document.getElementById("demo").innerHTML = question.guess + ' is not the right answer.\
+\
+' + question.first + ' ' + question.operator + ' ' + question.second + ' is ' + question.answer;
+        }
+    },
+    summary: function () {
+        var i,
+            correct = 0,
+            playtime = Math.floor((this.endTime - this.startTime) / 1000),
+            average = Math.floor(playtime / this.totalQuestions * 10) / 10,
+            summary = document.createDocumentFragment();
+        for (i = 0; i < this.history.length; i += 1) {
+            correct += (this.history[i].result ? 1 : 0);
+        }
+        summary.appendChild(document.createTextNode('You got ' + correct + ' questions right.'));
+        summary.appendChild(document.createElement('br'));
+        summary.appendChild(document.createTextNode('You played for ' + playtime + ' seconds, and took an average of ' + average + ' seconds to answer each question.'));
+        document.body.appendChild(summary);
+    }
+};
+window.questions.init(document.getElementById('game'));
+	</script>
+
+</body>
+</html>
