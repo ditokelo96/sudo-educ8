@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<style>
+	body {
+	  margin: 0;
+	  padding: 0;
+	  background: #DDD;
+	  font-size: 16px;
+	  color: white;
+	  font-family: 'Roboto', sans-serif;
+	  font-weight: 300;
+	  background-image: url("https://w.wallhaven.cc/full/zx/wallhaven-zxzgeo.png");
+	  background-attachment: fixed; 
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	}
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+  
+      .header .home {
+        font-size: 25px;
+        color: white;
+        text-decoration: none;
+        margin-left: 30px;
+      }
+  
+      .nav-items {
+		cursor: pointer;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 20px;
+      }
+  
+      .nav-items a {
+        text-decoration: none;
+        color: white;
+        padding: 35px 20px;
+      }
+	  
+	  .nav-items a.eng:hover {
+        text-decoration: none;
+        color: green;
+        padding: 35px 20px;
+      }
+	  
+	  .nav-items a.science:hover {
+        text-decoration: none;
+        color: red;
+        padding: 35px 20px;
+      }
+	  
+	  .nav-items a.tech:hover {
+        text-decoration: none;
+        color: orange;
+        padding: 35px 20px;
+      }
+	  
+	  .nav-items a.maths:hover {
+        text-decoration: none;
+        color: blue;
+        padding: 35px 20px;
+      }
+	  
+	  
+	  
+	  
+	  @import url(https://fonts.googleapis.com/css?family=Khula:700);
+
+.hidden {
+  opacity:0;
+}
+.console-container {
+ 
+  font-family:Khula;
+  font-size:4em;
+  text-align:center;
+  height:200px;
+  width:600px;
+  display:block;
+  position:absolute;
+  color:white;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.console-underscore {
+   display:inline-block;
+  position:relative;
+  top:-0.14em;
+  left:10px;
+}
+
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+  display: block;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  background-color: black;
+}
+.dropdown-content a:hover {
+  color: #FFFFFF;
+  background-color: orange;
+}
+
+ol {
+  display: table;
+  margin: 0 auto;
+}
+
+</style>
+<body onload="openTab(event, 'home')">
+	<header class="header">
+        <a href="home.html" class="home" color="white" >HOME</a>
+        <nav class="nav-items">
+             <a class="science" href="home.html">SCIENCE</a>
+             <a class="tech" href="home.html">TECHNOLOGY</a>
+             <a class="eng" href="engineeting.html"><u>ENGINEERING</u></a>
+             <a class="maths" href="mathematics.html">MATHEMATICS</a>
+             <a href="login.html">Logout</a>
+        </nav>
+    </header>
+		<center>
+	
+	<div class="dropdown">
+	  <button>PICK YOUR GRADE</button>
+	  <div class="dropdown-content">
+	  <a onclick="openTab(event, 'grd9')">GRADE 09</a>
+	  <a onclick="openTab(event, 'grd8')">GRADE 08</a>
+	  <a onclick="openTab(event, 'grd7')">GRADE 07</a>
+	  </div>
+	</div>
+	
+	<div class="tabcontent" id="home">
+		<br><br>WELCOME GRADE 09<br><br>
+	</div>
+	
+	<div class="tabcontent" id="grd8">
+		<br><br>WELCOME GRADE 08<br><br>
+	</div>
+	
+	<div class="tabcontent" id="grd7">
+		<br><br>WELCOME GRADE 07<br><br>
+	</div>
+	
+	<div class="nav-items" >
+		<a class="tablinks" onclick="openTab(event, 'Course')" >TUTORIALS AND QUIZ</a>
+		<a class="tablinks" onclick="openTab(event, 'Games')">GAMES</a>
+	</div>
+	<br><br>
+	<div id="Course" class="tabcontent">
+	<ol>
+		<li></li><br>
+		
+		<iframe width="768" height="432" src="https://www.youtube.com/embed/w4znQhW2ZKc?autoplay=1&mute=1&playlist=w4znQhW2ZKc&loop=1" 
+		title="FINAL FANTASY VII REMAKE INTERGRADE - Red XIII 3D Billboard Video" 
+		frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+		allowfullscreen></iframe>
+		<br><br><br>
+		
+		
+		<li>Learn 3D scanning</li><br>
+		<iframe width="400" height="232" src="https://www.youtube.com/embed/jyfktD1CtLM" 
+		title="3D Scanning from your Smart Phone for free!" frameborder="0" 
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+		allowfullscreen></iframe>
+	</ol>
+		<br><br><br><br><br><br><br>
+	 QUIZ<br>
+	 
+	 
+		<form id="game">
+			<p>Question: <span id="questionnumber"></p>
+			<p><span id="first"></span></p>
+			<p><input name="answer" autocomplete="off"></label> <input type="submit" name="submit" value="answer"></p>
+			
+		</form>
+		<p id="demo"></p>
+		<p id="time"></p>
+		
+		<br><br><br><br><br>
+	 
+	 <div class="extra">
+		ADDITIONAL RESOURCES:<br><br><br>
+		Wonderopolis WEBSITE <a href="https://www.wonderopolis.org/wonder/how-do-3d-printers-work/quiz" color="white">Click me</a>
+	 </div>
+	</div>
+	<br><br>
+	
+	<div id="Games" class="tabcontent">
+		<p>Play Rubik Cube Game on <a href="https://www.gogy.com/games/rubiks-cube-3d?gclid=Cj0KCQjw0JiXBhCFARIsAOSAKqCo-yZRrQ08xNsBW14C06uPpp5uGj9CnG2keInT0NdN1kR32aPbCYQaApJTEALw_wcB" color="white">Click me</a></p>
+		<br>
+	</div>
+	</center>
+	
+	<script>
+	function openTab(evt, tabName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+		
+		
+		window.questions = {
+    history: [],
+    init: function (form) {
+        this.minValue = 1;
+        this.maxValue = 20;
+        this.totalQuestions = 5;
+        this.startTime = new Date();
+        form.questions = this;
+        form.onsubmit = this.ask;
+        form.questions.show(form);
+    },
+    get: function () {
+        var question = {},
+            operatorType = Math.floor(Math.random() * 4);
+        do {
+            question.first = Math.floor(Math.random() * 12) + 1;
+            question.second = Math.floor(Math.random() * 12) + 1;
+            switch (operatorType) {
+            case 0:
+                question.operator = 'plus';
+                question.answer = question.first + question.second;
+                break;
+            case 1:
+                question.operator = 'minus';
+                question.answer = question.first - question.second;
+                break;
+            case 2:
+                question.operator = 'times';
+                question.answer = question.first * question.second;
+                break;
+            case 3:
+                question.operator = 'divided by';
+                question.answer = (question.first / question.second * 100) / 100;
+                break;
+            default:
+                question.operator = '';
+                question.answer = '';
+            }
+        } while (!this.valid(question));
+        return question;
+    },
+    valid: function (question) {
+        var isValid = (question.answer === Math.floor(question.answer)
+            && question.answer >= this.minValue
+            && question.answer <= this.maxValue);
+        if (isValid && question.operator === 'divided by') {
+            isValid === (question.first > 1 && question.second > 1);
+        }
+        return isValid;
+    },
+    ask: function (evt) {
+        var form = this,
+            that = form.questions;
+        if (!form.elements.answer.value) {
+            return false;
+        }
+        that.answer(form);
+        if (that.history.length < that.totalQuestions) {
+            that.show(form);
+        } else {
+            that.endTime = new Date();
+            that.summary();
+        }
+        return false;
+    },
+    show: function (form) {
+        var question = this.get();
+        this.history.push(question);
+        document.getElementById('questionnumber').innerHTML = this.history.length + ' / ' + this.totalQuestions;
+		
+		if(this.history.length === 1){
+		document.getElementById('first').innerHTML = "Who invented stereolithography, the forerunner of modern 3D printing technology?";
+		}
+		if(this.history.length === 2){
+		document.getElementById('first').innerHTML = "3D printing is an example of what type of manufacturing?";
+		}
+		if(this.history.length === 3){
+		document.getElementById('first').innerHTML = "Power = _______/time?";
+		}
+		if(this.history.length === 4){
+		document.getElementById('first').innerHTML = "Change flow = current x _______?";
+		}
+		if(this.history.length === 5){
+		document.getElementById('first').innerHTML = "What is the weakest force in nature?";
+		}
+		
+		
+        
+        form.elements.answer.value = '';
+        form.elements.answer.focus();
+    },
+    answer: function (form) {
+        var question = this.history[this.history.length - 1],
+            answer = question.answer;
+        question.guess = form.elements.answer.value;
+        question.result = true;
+		if(this.history.length === 1){
+		answer = "chuck hull";
+		}
+		if(this.history.length === 2){
+		answer = "additive";
+		}
+		if(this.history.length === 3){
+		answer = "work done";
+		}
+		if(this.history.length === 4){
+		answer = "time";
+		}
+		if(this.history.length === 5){
+		answer = "gravity";
+		}
+        if (question.guess.toLowerCase() !== answer) {
+            question.result = false;
+            document.getElementById("demo").innerHTML = question.guess + ' is not the right answer.\
+\
+' +  ' Answer is ' +answer;
+        }
+		else{
+		document.getElementById("demo").innerHTML = "Correct";
+		}
+    },
+    summary: function () {
+        var i,
+            correct = 0,
+            playtime = Math.floor((this.endTime - this.startTime) / 1000),
+            average = Math.floor(playtime / this.totalQuestions * 10) / 10,
+            summary = document.createDocumentFragment();
+        for (i = 0; i < this.history.length; i += 1) {
+            correct += (this.history[i].result ? 1 : 0);
+        }
+        summary.appendChild(document.createTextNode('You got ' + correct + ' questions right.'));
+        summary.appendChild(document.createElement('br'));
+        summary.appendChild(document.createTextNode('You played for ' + playtime + ' seconds, and took an average of ' + average + ' seconds to answer each question.'));
+        document.getElementById("demo").innerHTML = 'You got ' + correct + ' questions right.';
+		document.getElementById("time").innerHTML = 'You played for ' + playtime + ' seconds, and took an average of ' + average + ' seconds to answer each question.';
+    }
+};
+window.questions.init(document.getElementById('game'));
+    </script>
+
+</body>
+</html>
